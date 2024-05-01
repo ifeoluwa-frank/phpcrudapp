@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*background-color: #e9ecef;*/
+}
+.main-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+    /*margin-top: 80px;*/
+    display: grid;
+    grid-template-columns: 2.5fr 0.5fr;
+    gap: 25px;
+    position: relative;
+}
+
+header {
+    grid-column: 1 /-1;
+    background-color: #22b8cf;
+    padding: 40px;
+}
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    margin-left: 10px;
+}
+
+caption {
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-bottom: 10px;
+}
+
+td, th{
+    /*border: 1px solid black;*/
+    padding: 10px;
+}
+th{
+    background-color: #99e9f2;
+}
+td {
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+.action{
+    border: none;
+}
+
+aside {
+    margin-top: 75px;
+    margin-left: 10px;
+    /*border: 1px solid black;*/
+}
+.search-form {
+    padding: 10px;
+}
+.search-box {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #22b8cf;
+    color: white;
+    font-size: small;
+    font-weight: bolder;
+    display: inline-flex;
+}
+button:hover{
+    background-color: #3bc9db;
+}
+.svg {
+    width: 20px;
+    height: 20px;
+    stroke: #e9ecef;
+}
+
+.add-book {
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    background-color: #22b8cf;
+    color: white;
+    font-size: small;
+    font-weight: bolder;
+    margin-bottom: 30px;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.button-text{
+    margin-top: 3px;
+}
+
+.btn-search {
+    width: 100%;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+    padding: 12px 0;
+}
+.input{
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+label {
+    font-weight: bolder;
+}
+.save-books {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #22b8cf;
+    background-color: #e9ecef;
+    width: 40%;
+    padding: 20px;
+}
+
+.btn-submit {
+    padding: 16px;
+    width: 100%;
+    border: none;
+    background-color: #22b8cf;
+    font-weight: bolder;
+    font-size: larger;
+    color: white;
+}

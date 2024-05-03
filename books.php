@@ -5,21 +5,21 @@ if (isset($_POST['submit'])) {
     $errors = [];
 
         if (empty($_POST['title'])) {
-            $errors[] = "Book Title is a required field";
+            $errors['title'] = "Book Title is a required field";
         }
 
         if (empty($_POST['author'])) {
-            $errors[] = "Book Author is a required field";
+            $errors['author'] = "Book author cannot be empty";
         }
 
         if (empty($_POST['genre'])) {
-            $errors[] = "Book genre is a required field";
+            $errors['genre'] = "Book genre is a required field";
         }
 
         if (empty($_POST['pubYear'])) {
-            $errors[] = "Publication Year is a required field";
+            $errors['pubYear'] = "Publication Year is a required field";
         }
-
+//        var_export($errors);
     if (empty($errors)) {
         $id = $_POST['id'];
         $title = $_POST['title'];
@@ -39,11 +39,11 @@ if (isset($_POST['submit'])) {
             header('Location: index.php');
         }
     }
- else {
-        foreach ($errors as $error){
-            echo $error . "<br>";
-        }
-    }
+// else {
+//        foreach ($errors as $error){
+//            echo $error . "<br>";
+//        }
+//    }
 }
 
 //var_dump($error);
@@ -81,18 +81,22 @@ if (isset($_POST['submit'])) {
     </header>
     <form action="books.php" method="post" class="save-books">
         <input name="id" type="hidden" value="<?php echo $book['id'] ?? ''; ?>">
-        <p><?php echo $msg ?? '';?></p>
+
         <label for="title">Book Title:</label><br>
-        <input name="title" class="input" placeholder="The Art of War" type="text" value="<?php echo $book['title'] ?? ''; ?>" required><br>
+        <input name="title" class="input" placeholder="The Art of War" type="text" value="<?php echo $book['title'] ?? ''; ?>" ><br>
+        <p class="error"><?php echo $errors['title'] ?? '' ?></p>
 
         <label for="author">Author Name:</label><br>
-        <input name="author" class="input" placeholder="Sun Tzu" type="text" value="<?php echo $book['author'] ?? ''; ?>" required><br>
+        <input name="author" class="input" placeholder="Sun Tzu" type="text" value="<?php echo $book['author'] ?? ''; ?>" >
+        <p class="error"><?php echo $errors['author'] ?? '' ?></p>
 
         <label for="genre">Genre:</label><br>
-        <input name="genre" class="input" placeholder="Self Help" type="text" value='<?php echo $book['genre'] ?? ''; ?>' required><br>
+        <input name="genre" class="input" placeholder="Self Help" type="text" value='<?php echo $book['genre'] ?? ''; ?>' >
+        <p class="error"><?php echo $errors['genre'] ?? '' ?></p>
 
         <label for="Year">Publication Year:</label><br>
-        <input name="pubYear" class="input" placeholder="1998" type="text" value="<?php echo $book['publication_year'] ?? ''; ?>" required><br>
+        <input name="pubYear" class="input" placeholder="1998" type="text" value="<?php echo $book['publication_year'] ?? ''; ?>" >
+        <p class="error"><?php echo $errors['pubYear'] ?? '' ?></p>
 
         <button name="submit" class="btn-submit">Submit</button>
     </form>
